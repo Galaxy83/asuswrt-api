@@ -12,3 +12,4 @@ class Client(StringMixin):
         self.rssi = data.get('rssi')
         self.name = data.get('name')
         self.nickName = data.get('nickName')
+        self.isOnline = data.get('isOnline')
