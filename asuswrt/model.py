@@ -1,8 +1,8 @@
 class StringMixin(object):
     def __repr__(self):
-        classname  = self.__class__.__name__
         attributes = ', '.join('%s: %s' % item for item in sorted(vars(self).items()))
-        return '%s { %s }' % (classname, attributes)
+        return '%s { %s }' % (self.__class__.__name__, attributes)
+
 
 class Client(StringMixin):
     def __init__(self, data):
@@ -11,4 +11,4 @@ class Client(StringMixin):
         self.interface = data.get('interface', 'wired')
         self.rssi = data.get('rssi')
         self.name = data.get('name')
-        self.alias = data.get('alias')
+        self.nickName = data.get('nickName')

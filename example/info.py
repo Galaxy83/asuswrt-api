@@ -1,9 +1,10 @@
 import sys
-sys.path.append('../')
 
 from asuswrt import AsusWRT
 
-router = AsusWRT(url='http://192.168.1.1', username='admin', password='admin')
+sys.path.append('../')
+
+router = AsusWRT()
 sys = router.get_sys_info()
 
 print('Model: %s' % sys['model'])
